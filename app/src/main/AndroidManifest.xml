@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.anicodebreaker.dbms_project">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -22,7 +22,8 @@
         <activity android:name=".CreateAct" />
         <activity android:name=".UpdateAct" />
         <activity android:name=".ViewAct" />
-        <activity android:name=".customerAll"></activity>
+        <activity android:name=".customerAll" />
+        <activity android:name=".createCust"></activity>
     </application>
 
 </manifest>
