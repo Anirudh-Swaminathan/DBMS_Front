@@ -1,6 +1,8 @@
 package com.example.anicodebreaker.dbms_project;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -56,9 +58,11 @@ public class Login extends AppCompatActivity {
                 }
             }
         });
+
+
     }
 
-    public void loginCust(String user, String pass) {
+    public void loginCust(final String user, String pass) {
         Map<String, String> data = new HashMap<>();
         data.put("username", user);
         data.put("password", pass);
@@ -69,6 +73,15 @@ public class Login extends AppCompatActivity {
                 try {
                     if (response.body().getSuccess().equals("true")) {
                         Toast.makeText(Login.this, response.body().getMsg(), Toast.LENGTH_SHORT).show();
+
+                        final SharedPreferences loginInfo = Login.this.getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE);
+                        final SharedPreferences.Editor edit = loginInfo.edit();
+                        edit.putString("user", user);
+                        edit.apply();
+
+                        Intent i = new Intent(Login.this, ProjMain.class);
+                        startActivity(i);
+                        finish();
                     } else {
                         Toast.makeText(Login.this, response.body().getMsg(), Toast.LENGTH_SHORT).show();
                     }

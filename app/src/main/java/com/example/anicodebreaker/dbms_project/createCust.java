@@ -1,5 +1,6 @@
 package com.example.anicodebreaker.dbms_project;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -65,6 +66,9 @@ public class createCust extends AppCompatActivity {
                         try {
                             if (response.body().getSuccess().equals("true")) {
                                 Toast.makeText(createCust.this, response.body().getMsg(), Toast.LENGTH_SHORT).show();
+                                Intent i = new Intent(createCust.this, Login.class);
+                                startActivity(i);
+                                finish();
                             } else {
                                 Toast.makeText(createCust.this, response.body().getMsg(), Toast.LENGTH_SHORT).show();
                             }
