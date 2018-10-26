@@ -23,7 +23,8 @@
         <activity android:name=".UpdateAct" />
         <activity android:name=".ViewAct" />
         <activity android:name=".customerAll" />
-        <activity android:name=".createCust"></activity>
+        <activity android:name=".createCust" />
+        <activity android:name=".Login"></activity>
     </application>
 
 </manifest>
