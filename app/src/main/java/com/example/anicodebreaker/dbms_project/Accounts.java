@@ -1,6 +1,7 @@
 package com.example.anicodebreaker.dbms_project;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.anicodebreaker.dbms_project.model.Account;
+import com.example.anicodebreaker.dbms_project.model.Branch;
 import com.example.anicodebreaker.dbms_project.model.CustAccLoan;
 import com.example.anicodebreaker.dbms_project.rest.ApiClient;
 import com.example.anicodebreaker.dbms_project.rest.ApiInterface;
@@ -42,8 +44,25 @@ public class Accounts extends AppCompatActivity {
 
         fetchAccounts(u);
 
-        //ArrayAdapter<Account> accountsArrayAdapter = new ArrayAdapter<Account>(Accounts.this, android.R.layout.simple_list_item_1, accList);
-        //accountsList.setAdapter(accountsArrayAdapter);
+        accountsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent i1 = new Intent(Accounts.this, BranchDetails.class);
+                String branchname, branchcity;
+                int assets;
+                Account acc = accList.get(i);
+                Branch branch = acc.getBranch();
+                branchname = branch.getBranchname();
+                branchcity = branch.getBranchcity();
+                assets = branch.getAssets();
+                Bundle b = new Bundle();
+                b.putString("branchname", branchname);
+                b.putString("branchcity", branchcity);
+                b.putInt("assets", assets);
+                i1.putExtras(b);
+                startActivity(i1);
+            }
+        });
     }
 
     public void fetchAccounts(String username) {
