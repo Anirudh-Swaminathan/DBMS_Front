@@ -1,6 +1,7 @@
 package com.example.anicodebreaker.dbms_project.rest;
 
 import com.example.anicodebreaker.dbms_project.model.CustAll;
+import com.example.anicodebreaker.dbms_project.model.CustLogin;
 import com.example.anicodebreaker.dbms_project.model.UpdCust;
 
 import java.util.List;
@@ -15,6 +16,7 @@ import retrofit2.http.Query;
 import retrofit2.http.QueryMap;
 
 public interface ApiInterface {
+    // Customer List
     @GET("/customer/list/all/")
     Call<List<CustAll>> getAllCustomers();
 
@@ -24,4 +26,11 @@ public interface ApiInterface {
     @POST("/customer/update/new/")
     //Call<UpdCust> createNewCustomer(@field("email") String email, @field("password") String password);
     Call<UpdCust> createNewCustomer(@QueryMap Map<String, String> options);
+
+    @Headers({
+            "Content-Type: application/x-www-form-urlencoded"
+    })
+    @POST("/customer/login/")
+    Call<CustLogin> customerLogin(@QueryMap Map<String, String> options);
+
 }
