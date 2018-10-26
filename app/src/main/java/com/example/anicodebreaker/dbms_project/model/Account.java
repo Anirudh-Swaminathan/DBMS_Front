@@ -45,6 +45,11 @@ public class Account {
         this.branch = branch;
     }
 
+    @Override
+    public String toString() {
+        return Integer.toString(accountid) + "\n" + Integer.toString(balance) + "\n" + Integer.toString(accountnumber) + "\n" + isa + "\n" + branch;
+    }
+
     public Integer getAccountid() {
         return accountid;
     }
