@@ -47,7 +47,7 @@ public class Account {
 
     @Override
     public String toString() {
-        return Integer.toString(accountid) + "\n" + Integer.toString(balance) + "\n" + Integer.toString(accountnumber) + "\n" + isa + "\n" + branch;
+        return Integer.toString(accountid) + "\n" + Integer.toString(balance) + "\n" + Integer.toString(accountnumber) + "\n" + isa;
     }
 
     public Integer getAccountid() {

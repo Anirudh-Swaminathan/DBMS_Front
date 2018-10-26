@@ -42,8 +42,8 @@ public class Accounts extends AppCompatActivity {
 
         fetchAccounts(u);
 
-        ArrayAdapter<Account> accountsArrayAdapter = new ArrayAdapter<Account>(Accounts.this, android.R.layout.simple_list_item_1, accList);
-        accountsList.setAdapter(accountsArrayAdapter);
+        //ArrayAdapter<Account> accountsArrayAdapter = new ArrayAdapter<Account>(Accounts.this, android.R.layout.simple_list_item_1, accList);
+        //accountsList.setAdapter(accountsArrayAdapter);
     }
 
     public void fetchAccounts(String username) {
@@ -55,6 +55,8 @@ public class Accounts extends AppCompatActivity {
                     try {
                         accList = response.body().getAccounts();
                         Toast.makeText(Accounts.this, Integer.toString(accList.size()), Toast.LENGTH_SHORT).show();
+                        ArrayAdapter<Account> accountsArrayAdapter = new ArrayAdapter<Account>(Accounts.this, android.R.layout.simple_list_item_1, accList);
+                        accountsList.setAdapter(accountsArrayAdapter);
                     } catch (Exception e) {
                         Toast.makeText(Accounts.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                     }

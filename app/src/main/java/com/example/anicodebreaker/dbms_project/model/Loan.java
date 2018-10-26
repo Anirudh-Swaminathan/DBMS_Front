@@ -40,6 +40,11 @@ public class Loan {
         this.branch = branch;
     }
 
+    @Override
+    public String toString() {
+        return Integer.toString(loannumber) + "\n" + Integer.toString(amount);
+    }
+
     public Integer getLoannumber() {
         return loannumber;
     }
