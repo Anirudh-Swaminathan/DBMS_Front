@@ -1,5 +1,6 @@
 package com.example.anicodebreaker.dbms_project.rest;
 
+import com.example.anicodebreaker.dbms_project.model.CustAccLoan;
 import com.example.anicodebreaker.dbms_project.model.CustAll;
 import com.example.anicodebreaker.dbms_project.model.CustLogin;
 import com.example.anicodebreaker.dbms_project.model.UpdCust;
@@ -12,6 +13,7 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 import retrofit2.http.QueryMap;
 
@@ -33,4 +35,8 @@ public interface ApiInterface {
     @POST("/customer/login/")
     Call<CustLogin> customerLogin(@QueryMap Map<String, String> options);
 
+    @GET("/customer/getwithaccountsandloans/{user}/")
+    Call<CustAccLoan> getCustomerDetails(
+            @Path("user") String user
+    );
 }
