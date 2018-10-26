@@ -24,7 +24,9 @@
         <activity android:name=".ViewAct" />
         <activity android:name=".customerAll" />
         <activity android:name=".createCust" />
-        <activity android:name=".Login"></activity>
+        <activity android:name=".Login" />
+        <activity android:name=".Accounts" />
+        <activity android:name=".Loans"></activity>
     </application>
 
 </manifest>
