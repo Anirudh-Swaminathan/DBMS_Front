@@ -4,45 +4,107 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/pattern"
     tools:context=".Login">
 
-    <EditText
-        android:id="@+id/userNameIn"
-        android:layout_width="wrap_content"
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="129dp"
-        android:ems="10"
-        android:hint="Enter User Name"
-        android:inputType="textPersonName" />
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="30dp"
+        android:background="#fff"
+        card_view:cardCornerRadius="4dp"
+        card_view:cardElevation="5dp">
 
-    <EditText
-        android:id="@+id/pwdIn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/userNameIn"
-        android:layout_centerHorizontal="true"
-        android:ems="10"
-        android:hint="Enter Password"
-        android:inputType="textPassword" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            android:paddingTop="20dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="20dp">
 
-    <Button
-        android:id="@+id/loginBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="211dp"
-        android:text="Login" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:background="#fff"
+                android:src="@drawable/ic_action_user" />
 
-    <Button
-        android:id="@+id/newRegisterBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="153dp"
-        android:text="register" />
+            <EditText
+                android:id="@+id/userNameIn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter User Name"
+                android:layout_centerHorizontal="true"
+                android:padding="10dp"
+                android:layout_below="@+id/imageView"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:background="@drawable/border"
+                android:fontFamily="@font/hammersmithoneregular"
+                android:inputType="textPersonName" />
 
+            <EditText
+                android:id="@+id/pwdIn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/userNameIn"
+                android:ems="10"
+                android:layout_centerHorizontal="true"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:background="@drawable/border"
+                android:fontFamily="@font/hammersmithoneregular"
+                android:hint="Enter Password"
+                android:inputType="textPassword" />
+
+            <Button
+                android:id="@+id/loginBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/pwdIn"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:background="@drawable/button_border"
+                android:fontFamily="@font/hammersmithoneregular"
+                android:text="Login" />
+
+            <TextView
+                android:id="@+id/orText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_vertical"
+                android:layout_below="@+id/loginBtn"
+                android:gravity="center"
+                android:fontFamily="@font/hammersmithoneregular"
+                android:text="-OR-"/>
+
+            <Button
+                android:id="@+id/newRegisterBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/orText"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:background="@drawable/button_border"
+                android:fontFamily="@font/hammersmithoneregular"
+                android:text="register" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
 </RelativeLayout>
